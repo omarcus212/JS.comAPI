@@ -13,16 +13,23 @@ const pesquisarcep = async (cep) => {
 
     const data = await response.json();
 
+  
 
-    return data;
-     
+  return data;
+    
 
 }
 
 const preencherformulario = async () =>{
 
 const endereco = await pesquisarcep(cep.value);
+const teste = document.getElementById('endereco').value = endereco.logradouro;
 document.getElementById('bairro').value = endereco.bairro;
+document.getElementById('cidade').value = endereco.localidade;
+document.getElementById('estado').value = endereco.uf;
+
+console.log(endereco);
+
 
 }
 
